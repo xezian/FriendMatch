@@ -1,0 +1,160 @@
+<!DOCTYPE=html>
+<html>
+    <head>
+        <!-- Latest compiled and minified CSS & JS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <h4 class="row text-center">Congrats! You have reached the "Friend Match" compatability survey:</h4>
+        <div class="container">
+            <div class="form-group text-center">
+                <label for="friend-name">Name (required)</label>
+                <input type="text" class="form-control" id="friend-name">
+                <label for="picture-link">Picture URL (required)</label>
+                <input type="text" class="form-control" id="picture-link">
+            </div>
+            <div class="row text-center">
+                <label for="question">How do you feel?</label>
+                <select class="chosen-select" id="question-1">
+                    <option value></option>
+                    <option value="1">Bored</option>
+                    <option value="2">Brave</option>
+                    <option value="3">Bad</option>
+                    <option value="4">Bold</option>
+                    <option value="5">Brainy</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <div class="row text-center">
+                    <label for="question">What is your deal?</label>
+                    <select class="chosen-select" id="question-2">
+                        <option value></option>
+                        <option value="1">Power</option>
+                        <option value="2">Pay</option>
+                        <option value="3">Popularity</option>
+                        <option value="4">Peculiarity</option>
+                        <option value="5">Pass</option>
+                    </select>
+                </div>
+                <div class="row text-center">
+                    <label for="question">Which one is real?</label>
+                    <select class="chosen-select" id="question-3">
+                        <option value></option>
+                        <option value="1">Demon</option>
+                        <option value="2">Dragon</option>
+                        <option value="3">Demigod</option>
+                        <option value="4">Druid</option>
+                        <option value="5">Dracula</option>
+                    </select>
+                </div>
+                <div class="row text-center">
+                    <label for="question">Favorite meal?</label>
+                    <select class="chosen-select" id="question-4">
+                        <option value></option>
+                        <option value="1">Candy</option>
+                        <option value="2">Cauliflower</option>
+                        <option value="3">Clams</option>
+                        <option value="4">Celery</option>
+                        <option value="5">Cottage Cheese</option>
+                    </select>
+                </div>
+                <div class="row text-center">
+                    <label for="question">What kind of wheel?</label>
+                    <select class="chosen-select" id="question-5">
+                        <option value></option>
+                        <option value="1">Time</option>
+                        <option value="2">Tire</option>
+                        <option value="3">Train</option>
+                        <option value="4">Taxi</option>
+                        <option value="5">Training</option>
+                    </select>
+                </div>
+                <div class="row text-center">
+                    <label for="question">Secret to reveal?</label>
+                    <select class="chosen-select" id="question-6">
+                        <option value></option>
+                        <option value="1">Garden</option>
+                        <option value="2">Golf</option>
+                        <option value="3">Gambling</option>
+                        <option value="4">Grotesque</option>
+                        <option value="5">Guilty</option>
+                    </select>
+                </div>
+                <div class="row text-center">
+                    <label for="question">More fun to peel?</label>
+                    <select class="chosen-select" id="question-7">
+                        <option value></option>
+                        <option value="1">Socks</option>
+                        <option value="2">Stickers</option>
+                        <option value="3">Sticks</option>
+                        <option value="4">Sleeve</option>
+                        <option value="5">Salami</option>
+                    </select>
+                </div>
+                <div class="row text-center">
+                    <label for="question">Best place to kneel?</label>
+                    <select class="chosen-select" id="question-8">
+                        <option value></option>
+                        <option value="1">Freeway</option>
+                        <option value="2">Fairway</option>
+                        <option value="3">Forest</option>
+                        <option value="4">Fireside</option>
+                        <option value="5">Fortress</option>
+                    </select>
+                </div>
+                <div class="row text-center">
+                    <label for="question">Favorite Eel?</label>
+                    <select class="chosen-select" id="question-9">
+                        <option value></option>
+                        <option value="1">Moray</option>
+                        <option value="2">Miniature</option>
+                        <option value="3">Modern</option>
+                        <option value="4">Massive</option>
+                        <option value="5">Many</option>
+                    </select>
+                </div>
+                <div class="row text-center">
+                    <label for="question">For which have you zeal?</label>
+                    <select class="chosen-select" id="question-10">
+                        <option value></option>
+                        <option value="1">Swimming</option>
+                        <option value="2">Spinning</option>
+                        <option value="3">Singing</option>
+                        <option value="4">Sinning</option>
+                        <option value="5">Sprinting</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
+                Submit</button>
+            </div>
+        </div>    
+    </body>
+    <script type="text/javascript">
+        // front end JavaScript to submit survey results
+        $(document).on("click", "#submit", function(event) {
+            event.preventDefault();
+            // Here we grab the form elements
+            let newFriend = {
+                friendName: $("#friend-name").val().trim(),
+                pictureLink: $("#picture-link").val().trim(),
+                answers: function(){
+                    let answerArray = [];
+                    for (let i = 1; i < 11; i++){
+                        answerArray.push(parseInt($(`#question-${i}`).val()));
+                    }
+                    return answerArray;
+                }
+            };
+            console.log(newFriend);
+            $.post("/api/friends", newFriend, function(data) {
+                $("#match-name").text(data.friendName);
+                $("#match-link").attr("src", data.pictureLink);
+                $("#match-display").modal("toggle");
+            });
+        });
+    </script>
+</html>
