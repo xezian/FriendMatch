@@ -1,0 +1,23 @@
+{
+  "name": "friendmatch",
+  "version": "1.0.0",
+  "description": "friend matcher",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xezian/FriendMatch.git"
+  },
+  "author": "Jason A. Leo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xezian/FriendMatch/issues"
+  },
+  "homepage": "https://github.com/xezian/FriendMatch#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
