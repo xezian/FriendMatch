@@ -7,20 +7,21 @@ module.exports = function(app) {
     });
     app.post("/api/friends", function(req, res){
         // loop logic to handle compatability testing
-        let highScore = 0;
+        let lowScore = 100;
         let topMatch;
         for (let i = 0; i < friendData.length; i++){
             let friendScore = 0;
             for (let j = 0; j < friendData[i].answers.length; j++) {
-                if(req.body.answers[j]===friendData[i].answers[j]){
-                    friendScore++;    
-                }
+                let distance = friendData[i].answers[j] - req.body.answers[j];
+                distance = Math.abs(distance);
+                friendScore = friendScore + distance;
             };
-            if(friendScore > highScore) {
+            if(friendScore < lowScore) {
                 topMatch = friendData[i];
-                highScore = friendScore;
+                lowScore = friendScore;
             };
         };
+        console.log(topMatch);
         friendData.push(req.body);
         res.json(topMatch);
     });
