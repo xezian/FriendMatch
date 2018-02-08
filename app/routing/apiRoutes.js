@@ -1,9 +1,13 @@
 // data dependancies
 let friendData = require("../data/friends");
+let questionData = require("../data/questions");
 // routing for api data the app relies on
 module.exports = function(app) {
     app.get("/api/friends", function(req, res) {
         res.json(friendData);
+    });
+    app.get("/api/questions", function(req, res){
+        res.json(questionData);
     });
     app.post("/api/friends", function(req, res){
         // loop logic to handle compatability testing
