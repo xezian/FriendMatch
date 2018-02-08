@@ -1,4 +1,4 @@
-// friend data dependancies
+// data dependancies
 let friendData = require("../data/friends");
 // routing for api data the app relies on
 module.exports = function(app) {
@@ -9,18 +9,18 @@ module.exports = function(app) {
         // loop logic to handle compatability testing
         let lowScore = 100;
         let topMatch;
-        for (let i = 0; i < friendData.length; i++){
+        friendData.forEach(function(friend){
             let friendScore = 0;
-            for (let j = 0; j < friendData[i].answers.length; j++) {
-                let distance = friendData[i].answers[j] - req.body.answers[j];
+            for (let j = 0; j < friend.answers.length; j++) {
+                let distance = friend.answers[j] - req.body.answers[j];
                 distance = Math.abs(distance);
                 friendScore = friendScore + distance;
             };
             if(friendScore < lowScore) {
-                topMatch = friendData[i];
+                topMatch = friend;
                 lowScore = friendScore;
             };
-        };
+        });
         console.log(topMatch);
         friendData.push(req.body);
         res.json(topMatch);
