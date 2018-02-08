@@ -1,5 +1,7 @@
 const Question = require('./questionMaker.js');
+// it starts out empty!
 let allQuestions = [];
+// function that counts add new questions to the allQuestions counting up from the lenth for ID#
 function addQuestions(array){
     array = makeOneToTens(allQuestions.length, array);
     array.forEach(function(obj){
@@ -8,11 +10,10 @@ function addQuestions(array){
 };
 // function to make 10 scale of 1-10 questions for testing
 function makeOneToTens(startCount, array){
-    let answerArray = ["1 (Definitely NOT!)","2","3","4","5","6","7","8","9","10 (MOST Definitely!"];
     let count = startCount;
     return array.map(function(each){
         count++;
-        return new Question(count, each.thing, each.imgurl, answerArray);
+        return new Question(count, each.thing, each.imgurl);
     });
 };
 // array to hold them questions (as an example rate social medias)

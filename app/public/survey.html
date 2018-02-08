@@ -9,13 +9,19 @@
     <body>
         <h4 class="row text-center">Congrats! You have reached the "Friend Match" compatability survey:</h4>
         <div class="container">
-            <div class="form-group text-center">
-                <label for="friend-name">Name (required)</label>
-                <input type="text" class="form-control" id="friend-name">
-                <label for="picture-link">Picture URL (required)</label>
-                <input type="text" class="form-control" id="picture-link">
+            <div id="first-input">
+                <div class="form-group text-center">
+                    <label for="friend-name">Name (required)</label>
+                    <input type="text" class="form-control" id="friend-name">
+                    <label for="picture-link">Picture URL (required)</label>
+                    <input type="text" class="form-control" id="picture-link">
+                </div>
+                <div class="row">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" id="start"><i class="fa fa-check-circle" aria-hidden="true"></i>
+                    Submit</button>
+                </div>
             </div>
-            <div class="row text-center">
+            <!-- <div class="row text-center">
                 <label for="question">Facebook?</label>
                 <select class="chosen-select" id="question-1">
                     <option value="1">1 (Absoultely NOT!)</option>
@@ -170,6 +176,19 @@
             <div class="row">
                 <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
                 Submit</button>
+            </div> -->
+            <div class="modal fade questions-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="row text-center">
+                            <h3>How do you feel about:</h3>
+                            <h1 id="thing"></h1>
+                        </div>
+                        <div class="row text-center" id="question-picture-spot">
+                        <div class="row text-center" id="answers"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="modal fade results-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
