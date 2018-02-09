@@ -13,11 +13,12 @@ function makeQuestions(){
                 $("#first-input").css({"visibility": "hidden"});
                 oneQuestion(data[questionCount]);
                 $(document).on("click", ".color-button", function(event){
-                    todaysAnswers.push({
-                        answer: $(this).val(),
-                        questionId: data[questionCount].questionId
-                    });
-                    if(questionCount > data.length) {
+                    todaysAnswers.push($(this).val());
+                    // todaysAnswers.push({
+                    //     answer: $(this).val(),
+                    //     questionId: data[questionCount].questionId
+                    // });
+                    if(questionCount >= data.length - 1) {
                         $(".questions-modal").modal("toggle");
                         $(".submit-modal").modal("toggle");
                         return;
