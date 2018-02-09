@@ -176,7 +176,20 @@
             <div class="row">
                 <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
                 Submit</button>
-            </div> -->
+            </div> --> 
+            <div class="modal fade submit-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="row text-center">
+                            <h3>Great job! All done.</h3>
+                        </div>
+                        <div class="row">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
+                            Submit Answers</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="modal fade questions-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
@@ -185,8 +198,9 @@
                             <h1 id="thing"></h1>
                         </div>
                         <div class="row text-center" id="question-picture-spot">
-                        <div class="row text-center" id="answers"></div>
                         </div>
+                        <div class="row text-center" id="answers"></div>
+                        <div class="row" style="height:25px;"></div>
                     </div>
                 </div>
             </div>

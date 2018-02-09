@@ -1,4 +1,4 @@
-function resultsSubmit(){
+function resultsSubmit(answers){
     console.log("hello I am submitResults.js");
     // front end JavaScript to submit survey results
     $(document).on("click", "#submit", function(event) {
