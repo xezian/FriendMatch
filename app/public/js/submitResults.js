@@ -7,7 +7,7 @@ function resultsSubmit(answers){
         // Here we grab the form elements
         let newFriend = {
             friendName: $("#friend-name").val().trim(),
-            pictureLink: $("#picture-link").val(),
+            pictureLink: $("#picture-link").val().trim(),
             answers: answers,
         };
         // let's see it (in the browser console)
