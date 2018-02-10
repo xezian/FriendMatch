@@ -3,41 +3,64 @@
     <head>
         <!-- Latest compiled and minified CSS & JS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles/style.css">
         <script src="https://code.jquery.com/jquery.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <h4 class="row text-center">Congrats! You have reached the "Friend Match" compatability survey:</h4>
+        <!-- Container to hold a bunch of modals -->
         <div class="container">
-            <div id="first-input">
-                <div class="form-group text-center">
-                    <label for="friend-name">Name (required)</label>
-                    <input type="text" class="form-control" id="friend-name">
-                    <label for="picture-link">Picture URL (required)</label>
-                    <input type="text" class="form-control" id="picture-link">
-                </div>
-                <div class="row">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block" id="start"><i class="fa fa-check-circle" aria-hidden="true"></i>
-                    Submit</button>
-                </div>
-            </div>
-            <div class="modal fade submit-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <!-- begin modal -->
+            <div class="modal fade begin-modal" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="row text-center">
-                            <h3>Great job! All done.</h3>
+                    <div class="modal-content inner-begin">
+                        <div class="form-group text-center">
+                            <label for="friend-name">Name (required)</label>
+                            <input type="text" class="form-control" id="friend-name">
+                            <label for="picture-link">Picture URL (required)</label>
+                            <input type="text" class="form-control" id="picture-link">
                         </div>
-                        <div class="row">
-                            <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
-                            Submit Answers</button>
+                        <div class="row text-center">
+                            <img class="submitpic" src="images/who-are-you.jpg" alt="sorry no picture:(">
+                        </div>
+                        <div class="row text-center">
+                            <button type="button" class="btn btn-lg btn-warning" id="start">
+                                <h4>
+                                    <span class="glyphicon glyphicon-hand-right"></span> --- Click to Begin! --- 
+                                    <span class="glyphicon glyphicon-hand-left"></span>
+                                </h4>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="modal fade questions-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <!-- submit modal -->
+            <div class="modal fade submit-modal" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
+                    <div class="modal-content inner-submit">
                         <div class="row text-center">
+                            <h3>Great job! All done.</h3>
+                        </div>
+                        <div class="row text-center">
+                            <img class="submitpic" src="images/all-done.jpg" alt="sorry no picture:(">
+                        </div>
+                        <div class="row text-center">
+                            <button type="button" class="btn btn-lg btn-warning first-button" id="submit">
+                                <h4>
+                                    <span class="glyphicon glyphicon-hand-right"></span> --- Click to Submit! --- 
+                                    <span class="glyphicon glyphicon-hand-left"></span>
+                                </h4>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- questions modal -->
+            <div class="modal fade questions-modal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content inner-questions">
+                        <div class="row text-center">
+                            <h4>On a scale of 1 through 10,</h4>
                             <h3>How do you feel about:</h3>
                             <h1 id="thing"></h1>
                         </div>
@@ -48,20 +71,27 @@
                     </div>
                 </div>
             </div>
-            <div class="modal fade results-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <!-- results modal -->
+            <div class="modal fade results-modal" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
+                    <div class="modal-content inner-results">
                         <div class="row text-center">
                             <h3>Your best match:</h3>
                             <h1 id="match-name"></h1>
                         </div>
                         <div class="row text-center" id="picture-spot">
                         </div>
+                        <div class="row text-center">
+                            <a href="/">
+                                <button type="button" class="btn btn-lg btn-warning first-button"><h4><span class="glyphicon glyphicon-hand-right"></span> --- Start Over --- <span class="glyphicon glyphicon-hand-left"></span></h4></button>
+                            </a>
+                        </div>    
                     </div>
                 </div>
             </div>
         </div>    
     </body>
+    <!-- front end script links -->
     <script type="text/javascript" src="/js/frontEnd.js"></script>
     <script type="text/javascript" src="/js/questionGetter.js"></script>
     <script type="text/javascript" src="/js/submitResults.js"></script>

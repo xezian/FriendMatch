@@ -1,5 +1,7 @@
 function makeQuestions(){
     console.log("hello I am questionMaker.js");
+    // show the name and picture link inputs 
+    $(".begin-modal").modal("toggle");
     let todaysAnswers = [];
     // it's time to build a question for the question MODAL
     $(document).on("click", "#start", function(event){
@@ -14,7 +16,7 @@ function makeQuestions(){
                 return;
             } else {
                 // hide the name and picture link inputs 
-                $("#first-input").css({"visibility": "hidden"});
+                $(".begin-modal").modal("toggle");
                 // adds buttons to the (hidden) answers modal
                 let buttons = makeButtons();
                 $("#answers").append(buttons);
@@ -61,7 +63,7 @@ function oneQuestion(data){
     image
         .attr("src", data.pictureUrl)
         .attr("alt", ":( no picture")
-        .css({"display":"inline-block","margin":"0 auto","max-width":"500px","max-height":"250px","width":"auto","height":"auto"})
+        .css({"display":"inline-block","margin":"20px auto","max-width":"500px","max-height":"250px","width":"auto","height":"auto"})
         .appendTo($("#question-picture-spot"));
     // now show the modal
     $(".questions-modal").modal("toggle");
@@ -71,12 +73,12 @@ function makeButtons(){
     let colorArray = ["maroon","red","orange","goldenrod","yellow","limegreen","green","blue","indigo","violet"];
     let buttonsDiv = $("<div>");
     buttonsDiv
-        .css({"display":"inline-block","margin":"0 auto","border":"3px dashed aliceblue","height":"50px","width":"60vw","overflow-x":"scroll","overflow-y":"hidden","white-space":"nowrap"});
+        .css({"display":"inline-block","margin":"0 auto","height":"50px","width":"60vw","overflow-x":"scroll","overflow-y":"hidden","white-space":"nowrap"});
     // poo to further clarify the rating spectrum
     let poo = $("<button>");
     poo
         .attr("class", "btn")
-        .css({"line-height":"100%","background-color":"white","height":"90%","margin":"2px","font-size":"30px"})
+        .css({"line-height":"100%","background-color":"transparent","height":"90%","margin":"2px","font-size":"30px"})
         .html("💩")
         .appendTo(buttonsDiv);
     // let's start the count outside the forEach
@@ -87,7 +89,8 @@ function makeButtons(){
         button
             .attr("val", count)
             .attr("class", "btn color-button")
-            .css({"background-color":color,"height":"90%","margin":"2px"})
+            .css({"background-color":color,"color":"white","width":"50px","height":"90%","margin":"2px"})
+            .html(count)
             .appendTo(buttonsDiv);
         count++;
     });
@@ -95,7 +98,7 @@ function makeButtons(){
     let star = $("<button>");
     star
         .attr("class", "btn")
-        .css({"line-height":"100%","background-color":"white","height":"90%","margin":"2px","font-size":"30px"})
+        .css({"line-height":"100%","background-color":"transparent","height":"90%","margin":"2px","font-size":"30px"})
         .html("🌟")
         .appendTo(buttonsDiv);
     return buttonsDiv;

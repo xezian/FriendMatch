@@ -1,0 +1,41 @@
+body {
+    background-color: #61a39c;
+}
+.btn {
+    margin: 20px;
+}
+.first-button {
+    margin-top: 30vh;
+}
+.submitpic {
+    display: inline-block;
+    margin: 20px auto;
+    max-width: 500px;
+    max-height: 250px;
+    width: auto;
+    height: auto;
+}
+.begin-modal {
+    background-color: #a36161;
+}
+.inner-begin {
+    background-color: #61a39c;
+}
+.questions-modal {
+    background-color: #61a39c;
+}
+.inner-questions {
+    background-color: #a36161;
+}
+.submit-modal {
+    background-color: #a36161;
+}
+.inner-submit {
+    background-color: #61a39c;
+}
+.results-modal {
+    background-color: #a39b61;
+}
+.inner-results {
+    background-color: #a3619f;
+}

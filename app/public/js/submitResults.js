@@ -19,6 +19,7 @@ function resultsSubmit(answers){
                 .text(data.friendName);
             let image = $("<img>");
             image
+                .css({"display":"inline-block","margin":"20px auto","max-width":"500px","max-height":"250px","width":"auto","height":"auto"})
                 .attr("src", data.pictureLink)
                 .attr("alt", data.friendName)
                 .appendTo($("#picture-spot"));            
