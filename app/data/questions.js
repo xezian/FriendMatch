@@ -20,44 +20,46 @@ function makeOneToTens(startCount, array){
 let socialMedias = [
     {
         thing:"Facebook",
-        imgurl:"https://upload.wikimedia.org/wikipedia/en/thumb/b/be/Facebook-likes-box.png/1208px-Facebook-likes-box.png"
+        imgurl:"images/Facebook-likes-box.png"
     },
     {
         thing:"Twitter",
-        imgurl:"https://c1.staticflickr.com/9/8509/8477893426_e4bd8aa5df_b.jpg",
+        imgurl:"images/Twitter-phone-pole.jpg",
     },
     {
         thing: "Pinterest",
-        imgurl: ""
+        imgurl: "images/Pinterest-as-flower.jpg"
     },
     {
         thing: "Google",
-        imgurl: "https://lh5.ggpht.com/sYrNACiQJFksu3SQnnJYrhk4dGvQCiNJmiu-FAqT5Z_TWp0DhOsTTAS9Pb0ZZLiYM0y-Ac8MxVMcggpohPU0ca2t1T4q=s0",
+        imgurl: "images/Google-badly-drawn.png",
     },
     {
         thing: "Snapchat",
-        imgurl: "",
+        imgurl: "images/Snapchat-warp-speed.jpg",
     },
     {
         thing: "Instagram",
-        imgurl: "",
+        imgurl: "images/Instagram-with-person.jpg",
     },
     {
-        thing:"Tinder",
-        imgurl: "",
+        thing:"Yahoo",
+        imgurl: "images/Yahoo-purple-cow.jpg",
     },
     {
         thing: "PayPal",
-        imgurl: "",
+        imgurl: "images/PayPal-on-halo.jpg",
     },
     {
         thing:"Reddit",
-        imgurl:"",
+        imgurl:"images/Reddit-in-circle.jpg",
     },
     {
         thing: "Craigslist",
-        imgurl: "",
+        imgurl: "images/Craigslist-headquarters.jpg",
     },
 ];
+// use the socialMedias as questions
 addQuestions(socialMedias);
+// export all questions
 module.exports = allQuestions;
